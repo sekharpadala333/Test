@@ -1,7 +1,16 @@
-# Test
-# This is dev 2 from pune
-# this is new change
-
-# new chnage
-# new chnage
-#
+pipeline {
+    agent any
+         stages {
+             stage ('git clone') {
+             steps { git branch: 'main', url: 'https://github.com/sekharpadala333/Test.git'
+             }
+         }
+             stage ('test') {
+             steps {echo " this test is good"
+             }
+         }
+             stage ('build') {
+             steps {echo " final buil completed"
+             }
+         }
+     }
